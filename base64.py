@@ -1,18 +1,24 @@
-def debug(a):
-    print("###{}###".format(a))
+
+# def debug(a):
+#     print("###{}###".format(a))
+
 
 def garph():
     for i in range(0,26):
         arr.append(chr(i+65))
     for i in range(0,26):
         arr.append(chr(i+97))
-    for i in range(0,9):
+    for i in range(0,10):
         arr.append(chr(i+48))
     arr.append('+')
     arr.append('/')
 
 arr=[]
 garph()
+# for i in range(0,64):
+#     debug(arr[i])
+ 
+
 
 def EnCode():
     origin=input()
