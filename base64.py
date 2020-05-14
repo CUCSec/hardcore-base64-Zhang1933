@@ -1,3 +1,6 @@
+def debug(a):
+    print("###{}###".format(a))
+
 def garph():
     for i in range(0,26):
         arr.append(chr(i+65))
@@ -6,7 +9,7 @@ def garph():
     for i in range(0,9):
         arr.append(chr(i+48))
     arr.append('+')
-    arr.append('-')
+    arr.append('/')
 
 arr=[]
 garph()
@@ -19,10 +22,10 @@ def EnCode():
     res=""
 
     for char in origin:
-        tmp='0'
-        tmp+=bin(ord(char))[2:]
+        tmp=bin(ord(char))[2:]
+        tmp=tmp.zfill(8)
         res+=tmp
-
+    
     if len(res)%6 != 0:
         res=res.ljust(6-len(res)%6+len(res),'0')
 
