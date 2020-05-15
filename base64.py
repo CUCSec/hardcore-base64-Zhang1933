@@ -1,8 +1,3 @@
-
-# def debug(a):
-#     print("###{}###".format(a))
-
-
 def garph():
     for i in range(0,26):
         arr.append(chr(i+65))
@@ -15,12 +10,9 @@ def garph():
 
 arr=[]
 garph()
-# for i in range(0,64):
-#     debug(arr[i])
- 
-
 
 def EnCode():
+    ans=""
     origin=input()
     addEq=0
     if len(origin)%3 !=0:
@@ -36,13 +28,15 @@ def EnCode():
         res=res.ljust(6-len(res)%6+len(res),'0')
 
     for i in range(0,len(res),6):
-        print(arr[int(res[i:i+6] , base=2)],end='')
-
+        # print(arr[int(res[i:i+6] , base=2)])
+        ans+=arr[int(res[i:i+6] , base=2)]
     for i in range(0,addEq):    
-        print('=',end='')
-    print('')
+        #print('=',end='')
+        ans+='='
+    return ans
 
 def DeCode():
+    ans=""
     deco=input()
     res=''
     for char in deco:
@@ -50,9 +44,9 @@ def DeCode():
             res+=bin(arr.index(char))[2:].rjust(6,'0')
 
     for i in range(0,len(res),8):
-
-        print( chr( int( res[i:i+8],2)),end='')
-    print('')
+        #print( chr( int( res[i:i+8],2)),end='')
+        ans+=chr( int( res[i:i+8],2))
+    return ans
 
 while(1):
 
@@ -62,12 +56,11 @@ while(1):
 
     elif judge=='1':
         print("encode：")
-        EnCode()
+        print(EnCode())
 
     elif judge=='2':
         print('decode')
-        DeCode()
-
+        print(DeCode())
     else:
         print('大哥！输入其他字符是没用的')
-
+        
